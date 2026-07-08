@@ -1,16 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
 import { Reveal } from "./Reveal";
 import aboutImage from "@/assets/about-painter.jpg";
 
-const POINTS = [
-  "High-quality finishes on every surface",
-  "Honest, transparent pricing",
-  "Meticulous attention to detail",
-  "Customer satisfaction guaranteed",
-];
-
-export function AboutSection({ full = false }: { full?: boolean }) {
+export function HomeAboutTeaser() {
   return (
     <section className="bg-sage py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
@@ -37,43 +30,28 @@ export function AboutSection({ full = false }: { full?: boolean }) {
           <div>
             <Reveal>
               <span className="inline-block rounded-full bg-card px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-primary shadow-soft">
-                About RR Painters
+                Who We Are
               </span>
               <h2 className="mt-5 text-3xl font-semibold leading-tight md:text-4xl lg:text-[2.75rem]">
-                Craftsmanship You Can Trust, Finishes You'll Love
+                A Local Team Obsessed with a Perfect Finish
               </h2>
               <p className="mt-5 leading-relaxed text-muted-foreground">
-                RR Painters is a reliable New Zealand painting company committed to delivering
-                high-quality finishes, honest service and genuine attention to detail. From single
-                rooms to full commercial fit-outs, we treat every project like it's our own home —
-                because your satisfaction is how we measure success.
+                RR Painters is a small, hands-on New Zealand crew that treats every home and
+                business like our own. Premium paints, tidy worksites and honest quotes — that's
+                the whole promise.
               </p>
             </Reveal>
 
-            <Reveal delay={0.1}>
-              <ul className="mt-7 grid gap-3 sm:grid-cols-2">
-                {POINTS.map((point) => (
-                  <li key={point} className="flex items-center gap-2.5 text-sm font-semibold">
-                    <FaCheckCircle aria-hidden className="shrink-0 text-accent" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
+            <Reveal delay={0.15}>
+              <Link
+                to="/about"
+                className="story-link mt-8 inline-flex items-center gap-2 text-sm font-bold text-primary"
+              >
+                More About Us <FaArrowRight aria-hidden />
+              </Link>
             </Reveal>
-
-            {!full && (
-              <Reveal delay={0.2}>
-                <Link
-                  to="/about"
-                  className="story-link mt-8 inline-flex items-center gap-2 text-sm font-bold text-primary"
-                >
-                  More About Us <FaArrowRight aria-hidden />
-                </Link>
-              </Reveal>
-            )}
           </div>
         </div>
-
       </div>
     </section>
   );
