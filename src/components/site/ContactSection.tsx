@@ -75,21 +75,6 @@ export function ContactSection() {
               </div>
             </Reveal>
 
-            <Reveal delay={0.36}>
-              <div
-                className="flex h-56 items-center justify-center rounded-3xl border border-border bg-sage text-center shadow-soft"
-                role="img"
-                aria-label="Map placeholder showing our New Zealand service area"
-              >
-                <div>
-                  <FaMapMarkerAlt aria-hidden className="mx-auto text-3xl text-primary" />
-                  <p className="mt-3 text-sm font-semibold text-muted-foreground">
-                    Google Maps — coming soon
-                  </p>
-                  <p className="text-xs text-muted-foreground">Serving homes & businesses across NZ</p>
-                </div>
-              </div>
-            </Reveal>
           </div>
 
           <Reveal delay={0.1} className="lg:col-span-3">
