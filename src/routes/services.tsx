@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { ServicesSection } from "@/components/site/ServicesSection";
-import { ProcessTimeline } from "@/components/site/ProcessTimeline";
 import { FaqSection } from "@/components/site/FaqSection";
 import { CtaBanner } from "@/components/site/CtaBanner";
 
@@ -33,7 +32,6 @@ function ServicesPage() {
         subtitle="Seven specialist services, one trusted team. Every job starts with a free quote and ends with a finish we're proud to put our name on."
       />
       <ServicesSection />
-      <ProcessTimeline />
       <FaqSection />
       <div className="bg-sage pt-1">
         <CtaBanner />
