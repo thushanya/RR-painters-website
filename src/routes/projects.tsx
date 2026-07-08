@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { ProjectsGallery } from "@/components/site/ProjectsGallery";
-import { TestimonialsSection } from "@/components/site/TestimonialsSection";
+
 import { CtaBanner } from "@/components/site/CtaBanner";
 
 export const Route = createFileRoute("/projects")({
@@ -32,7 +32,6 @@ function ProjectsPage() {
         subtitle="A gallery of recent projects — placeholder imagery for now, soon to be replaced with real photos from our completed jobs."
       />
       <ProjectsGallery />
-      <TestimonialsSection limit={3} />
       <div className="bg-sage pt-1">
         <CtaBanner />
       </div>
