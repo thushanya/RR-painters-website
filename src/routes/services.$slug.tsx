@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { FaArrowRight, FaCheckCircle, FaChevronRight, FaPhoneAlt } from "react-icons/fa";
 import { Reveal, SectionHeading } from "@/components/site/Reveal";
 import { CtaBanner } from "@/components/site/CtaBanner";
-import { SERVICES, COMPANY } from "@/lib/site-data";
+import { SERVICES, COMPANY, type Service } from "@/lib/site-data";
 
 export const Route = createFileRoute("/services/$slug")({
   head: ({ params }) => {
@@ -51,7 +51,7 @@ export const Route = createFileRoute("/services/$slug")({
 });
 
 function ServiceDetailPage() {
-  const { service } = Route.useLoaderData();
+  const { service } = Route.useLoaderData() as { service: Service };
   const Icon = service.icon;
   const related = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 3);
 
