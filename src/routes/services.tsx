@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { ServicesSection } from "@/components/site/ServicesSection";
-import { ProcessTimeline } from "@/components/site/ProcessTimeline";
 import { FaqSection } from "@/components/site/FaqSection";
 import { CtaBanner } from "@/components/site/CtaBanner";
 

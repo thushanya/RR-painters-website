@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { AboutSection } from "@/components/site/AboutSection";
-import { WhyChoose } from "@/components/site/WhyChoose";
+import { StatsStrip } from "@/components/site/StatsStrip";
 import { ProcessTimeline } from "@/components/site/ProcessTimeline";
 import { CtaBanner } from "@/components/site/CtaBanner";
 import { TrustSection } from "@/components/site/TrustSection";
@@ -34,8 +34,8 @@ function AboutPage() {
         subtitle="RR Painters has been transforming New Zealand homes and businesses since 2018 — with honest service, premium materials and finishes that last."
       />
       <AboutSection full />
+      <StatsStrip />
       <TrustSection />
-      <WhyChoose />
       <ProcessTimeline />
       <div className="bg-sage pt-1">
         <CtaBanner />
