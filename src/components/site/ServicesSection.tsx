@@ -18,7 +18,11 @@ export function ServicesSection({ limit }: { limit?: number }) {
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <Reveal key={service.slug} delay={(i % 3) * 0.1}>
-              <div className="group relative h-full overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift">
+              <Link
+                to="/services/$slug"
+                params={{ slug: service.slug }}
+                className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card p-8 shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lift"
+              >
                 <div
                   aria-hidden
                   className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-sage opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
@@ -30,13 +34,10 @@ export function ServicesSection({ limit }: { limit?: number }) {
                 <p className="relative mt-3 text-sm leading-relaxed text-muted-foreground">
                   {service.description}
                 </p>
-                <Link
-                  to="/contact"
-                  className="story-link relative mt-6 inline-flex items-center gap-2 text-sm font-bold text-gold"
-                >
+                <span className="story-link relative mt-6 inline-flex items-center gap-2 text-sm font-bold text-gold">
                   Learn More <FaArrowRight aria-hidden className="transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
-              </div>
+                </span>
+              </Link>
             </Reveal>
           ))}
         </div>
