@@ -32,7 +32,6 @@ function ServicesPage() {
         subtitle="Seven specialist services, one trusted team. Every job starts with a free quote and ends with a finish we're proud to put our name on."
       />
       <ServicesSection />
-      <ProcessTimeline />
       <FaqSection />
       <div className="bg-sage pt-1">
         <CtaBanner />
