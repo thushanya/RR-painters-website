@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { TestimonialsSection } from "@/components/site/TestimonialsSection";
+import { ReviewCtaSection } from "@/components/site/ReviewCtaSection"; 
 import { WhyChoose } from "@/components/site/WhyChoose";
 import { CtaBanner } from "@/components/site/CtaBanner";
 
@@ -23,6 +24,8 @@ export const Route = createFileRoute("/testimonials")({
   component: TestimonialsPage,
 });
 
+const BUILDERSCRACK_URL = "https://builderscrack.co.nz/tradies/21fnpwv0/rr-painting-services";
+
 function TestimonialsPage() {
   return (
     <>
@@ -31,11 +34,20 @@ function TestimonialsPage() {
         title="Trusted by Homeowners & Businesses"
         subtitle="Nothing matters more to us than happy customers. Here's what they have to say about working with RR Painters."
       />
+      
       <TestimonialsSection />
-      <WhyChoose />
-      <div className="bg-sage pt-1">
+      
+      <ReviewCtaSection profileUrl={BUILDERSCRACK_URL} />
+      
+      {/* 1. Added a clean section element to separate it nicely */}
+      <section className="bg-sage py-20 md:py-28">
+        <WhyChoose />
+      </section>
+      
+      {/* 2. Standardized CTA container with separate padding layout */}
+      <section className="bg-background pb md:pb">
         <CtaBanner />
-      </div>
+      </section>
     </>
   );
 }

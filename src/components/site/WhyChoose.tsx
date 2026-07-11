@@ -40,7 +40,7 @@ export function WhyChoose() {
           light
           eyebrow="Why Choose RR Painters"
           title="The Difference Is in the Detail"
-          subtitle="Four reasons homeowners and businesses across New Zealand keep choosing us."
+          subtitle="Four reasons homeowners and businesses across Wellington and Kāpiti in New Zealand keep choosing us."
         />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

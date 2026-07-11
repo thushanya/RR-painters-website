@@ -42,16 +42,20 @@ export function ServicesSection({ limit }: { limit?: number }) {
           ))}
         </div>
 
-        {limit && (
-          <Reveal delay={0.2} className="mt-12 text-center">
-            <Link
-              to="/services"
-              className="hover-scale inline-flex items-center gap-2 rounded-full bg-gradient-forest px-7 py-3.5 text-sm font-bold text-primary-foreground shadow-soft"
-            >
-              View All Services <FaArrowRight aria-hidden />
-            </Link>
-          </Reveal>
-        )}
+          {limit && (
+  <Reveal delay={0.2} className="mt-12 text-center">
+    <Link
+      to="/services"
+      className="inline-flex items-center gap-2.5 rounded-xl bg-emerald-900 px-6 py-3.5 text-sm font-bold text-white shadow-sm transition-all duration-300 hover:bg-black/90 hover:text-white hover:shadow-lift"
+    >
+      View All Services{" "}
+      <FaArrowRight 
+        aria-hidden 
+        className="transition-transform duration-300 group-hover:translate-x-1" 
+      />
+    </Link>
+  </Reveal>
+)}
       </div>
     </section>
   );

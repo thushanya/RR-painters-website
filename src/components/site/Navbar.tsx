@@ -3,6 +3,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FaBars, FaPhoneAlt, FaTimes } from "react-icons/fa";
 import { NAV_LINKS, COMPANY } from "@/lib/site-data";
+// 1. Import your logo image here
+import logoImg from "@/assets/favicon.png"; 
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -30,12 +32,18 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
         <Link to="/" className="flex items-center gap-2.5" aria-label="RR Painters home">
+          {/* 2. Changed rounded-xl to rounded-full and added overflow-hidden */}
           <span
-            className={`flex h-10 w-10 items-center justify-center rounded-xl text-lg font-bold ${
+            className={`flex h-10 w-10 items-center justify-center rounded-full overflow-hidden text-lg font-bold ${
               solid ? "bg-gradient-forest text-primary-foreground" : "glass text-primary-foreground"
             }`}
           >
-            <span className="font-display">RR</span>
+            {/* 3. Replaced the "RR" text with the img element */}
+            <img 
+              src={logoImg} 
+              alt="RR Painters Logo" 
+              className="h-full w-full object-cover" 
+            />
           </span>
           <span className="leading-tight">
             <span

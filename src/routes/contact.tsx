@@ -10,12 +10,12 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contact RR Painters for a free painting quote. Call 022 586 3335 or email R.R.Painters@yahoo.com — serving New Zealand wide.",
+          "Contact RR Painters for a free painting quote. Call 022 586 3335 or email R.R.Painters@yahoo.com — serving parts of New Zealand.",
       },
       { property: "og:title", content: "Contact Us — RR Painters" },
       {
         property: "og:description",
-        content: "Get your free, no-obligation painting quote today. Serving New Zealand wide.",
+        content: "Get your free, no-obligation painting quote today. Serving parts of New Zealand.",
       },
     ],
   }),

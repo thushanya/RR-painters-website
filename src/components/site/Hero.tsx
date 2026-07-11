@@ -68,9 +68,9 @@ export function Hero() {
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="mt-6 max-w-xl text-lg leading-relaxed text-primary-foreground/80"
+            className="mt-6 max-w-xl text-lg leading-relaxed text-primary-foreground/100"
           >
-            Trusted residential and commercial painting specialists across New Zealand, delivering
+            Trusted residential and commercial painting specialists across Hutt Valley, Kapiti Coast, Porirua & Wellington in New Zealand, delivering
             quality workmanship since 2018.
           </motion.p>
 

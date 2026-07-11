@@ -21,7 +21,7 @@ export function HomeAboutTeaser() {
               <div className="glass-light absolute -bottom-6 left-6 rounded-3xl px-6 py-5 shadow-soft">
                 <p className="font-display text-3xl font-semibold text-primary">Since 2018</p>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                  Serving New Zealand
+                  Serving across parts of New Zealand
                 </p>
               </div>
             </div>
@@ -45,9 +45,9 @@ export function HomeAboutTeaser() {
             <Reveal delay={0.15}>
               <Link
                 to="/about"
-                className="story-link mt-8 inline-flex items-center gap-2 text-sm font-bold text-primary"
+                className="story-link relative mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary"
               >
-                More About Us <FaArrowRight aria-hidden />
+                More About Us{" "} <FaArrowRight aria-hidden className="transition-transform duration-300 group-hover:translate-x-1"/>
               </Link>
             </Reveal>
           </div>

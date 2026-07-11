@@ -5,16 +5,35 @@ import { COMPANY, SERVICES } from "@/lib/site-data";
 
 export function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const subject = encodeURIComponent(`Free Quote Request — ${data.get("name")}`);
-    const body = encodeURIComponent(
-      `Name: ${data.get("name")}\nPhone: ${data.get("phone")}\nEmail: ${data.get("email")}\nService: ${data.get("service")}\n\nMessage:\n${data.get("message")}`,
-    );
-    window.location.href = `${COMPANY.emailHref}?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    setIsSubmitting(true);
+    
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mdarqrzw", {
+        method: "POST",
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        form.reset(); // Clears all input fields automatically on success
+      } else {
+        alert("Oops! There was a problem submitting your form. Please try again.");
+      }
+    } catch (error) {
+      alert("Oops! There was a network error. Please check your connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -32,7 +51,7 @@ export function ContactSection() {
               { icon: FaUser, label: "Contact Person", value: COMPANY.contactPerson, href: undefined },
               { icon: FaPhoneAlt, label: "Phone", value: COMPANY.phone, href: COMPANY.phoneHref },
               { icon: FaEnvelope, label: "Email", value: COMPANY.email, href: COMPANY.emailHref },
-              { icon: FaMapMarkerAlt, label: "Service Area", value: "New Zealand wide", href: undefined },
+              { icon: FaMapMarkerAlt, label: "Service Area", value: "Parts of New Zealand (Greater Wellington Region)", href: undefined },
             ].map((item, i) => (
               <Reveal key={item.label} delay={i * 0.08}>
                 <div className="flex items-center gap-4 rounded-3xl border border-border bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
@@ -74,7 +93,6 @@ export function ContactSection() {
                 </a>
               </div>
             </Reveal>
-
           </div>
 
           <Reveal delay={0.1} className="lg:col-span-3">
@@ -160,14 +178,15 @@ export function ContactSection() {
 
               <button
                 type="submit"
-                className="hover-scale mt-8 w-full rounded-full bg-gradient-gold px-8 py-4 text-sm font-bold text-gold-foreground shadow-gold"
+                disabled={isSubmitting}
+                className="hover-scale mt-8 w-full rounded-full bg-gold 0 px-8 py-4 text-sm font-bold text-white shadow-md transition-colors duration-300 hover:bg-primary"
               >
-                Request a Free Quote
+                {isSubmitting ? "Sending..." : "Request a Free Quote"}
               </button>
 
               {submitted && (
                 <p className="mt-4 flex items-center justify-center gap-2 text-sm font-semibold text-primary">
-                  <FaCheckCircle aria-hidden /> Your email app should open — we'll be in touch soon!
+                  <FaCheckCircle aria-hidden /> Thank you! Your request has been sent successfully.
                 </p>
               )}
             </form>

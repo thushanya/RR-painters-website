@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 import { Reveal } from "./Reveal";
-import aboutImage from "@/assets/about-painter.jpg";
+import aboutImage from "@/assets/painter.jpg";
 
 const POINTS = [
   "High-quality finishes on every surface",
@@ -28,7 +28,7 @@ export function AboutSection({ full = false }: { full?: boolean }) {
               <div className="glass-light absolute -bottom-6 left-6 rounded-3xl px-6 py-5 shadow-soft">
                 <p className="font-display text-3xl font-semibold text-primary">Since 2018</p>
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-                  Serving New Zealand
+                  Serving Hutt Valley, Kapiti Coast, Porirua & Wellington in New Zealand
                 </p>
               </div>
             </div>
@@ -65,9 +65,9 @@ export function AboutSection({ full = false }: { full?: boolean }) {
               <Reveal delay={0.2}>
                 <Link
                   to="/about"
-                  className="story-link mt-8 inline-flex items-center gap-2 text-sm font-bold text-primary"
-                >
-                  More About Us <FaArrowRight aria-hidden />
+                  className="story-link relative mt-6 inline-flex items-center gap-2 text-sm font-bold text-gold"
+                > 
+                  More About Us <FaArrowRight aria-hidden className="transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </Reveal>
             )}

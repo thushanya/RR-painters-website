@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { COMPANY, NAV_LINKS, SERVICES } from "@/lib/site-data";
+import logoImg from "@/assets/favicon.png"; 
 
 export function Footer() {
   return (
@@ -9,8 +10,12 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-2.5">
-              <span className="glass flex h-11 w-11 items-center justify-center rounded-xl">
-                <span className="font-display text-lg font-bold">RR</span>
+              <span className="flex h-10 w-10 items-center justify-center rounded-full overflow-hidden text-lg font-bold glass text-primary-foreground">
+                <img 
+                  src={logoImg} 
+                  alt="RR Painters Logo" 
+                  className="h-full w-full object-cover" 
+                />
               </span>
               <span>
                 <span className="font-display block text-xl font-semibold">RR Painters</span>
@@ -20,25 +25,9 @@ export function Footer() {
               </span>
             </div>
             <p className="mt-5 text-sm leading-relaxed text-primary-foreground/70">
-              Trusted residential and commercial painting specialists across New Zealand, delivering
+              Trusted residential and commercial painting specialists across Hutt Valley, Kapiti Coast, Porirua & Wellington in New Zealand delivering
               quality workmanship since 2018.
             </p>
-            <div className="mt-6 flex gap-3">
-              {[
-                { icon: FaFacebookF, label: "Facebook" },
-                { icon: FaInstagram, label: "Instagram" },
-                { icon: FaLinkedinIn, label: "LinkedIn" },
-              ].map(({ icon: Icon, label }) => (
-                <a
-                  key={label}
-                  href="#"
-                  aria-label={label}
-                  className="glass hover-scale flex h-10 w-10 items-center justify-center rounded-full text-sm"
-                >
-                  <Icon aria-hidden />
-                </a>
-              ))}
-            </div>
           </div>
 
           <div>
@@ -67,7 +56,8 @@ export function Footer() {
               {SERVICES.map((s) => (
                 <li key={s.slug}>
                   <Link
-                    to="/services"
+                    to="/services/$slug"
+                    params={{ slug: s.slug }}
                     className="story-link text-sm text-primary-foreground/80 hover:text-primary-foreground"
                   >
                     {s.title}
@@ -96,7 +86,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <FaMapMarkerAlt aria-hidden className="mt-1 shrink-0 text-emerald" />
-                <span>Serving New Zealand</span>
+                <span>Serving Hutt Valley, Kapiti Coast, Porirua & Wellington in New Zealand</span>
               </li>
             </ul>
             <div className="mt-6 rounded-2xl bg-white/5 p-4 text-xs leading-relaxed text-primary-foreground/60">

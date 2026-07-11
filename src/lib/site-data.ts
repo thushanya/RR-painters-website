@@ -18,8 +18,8 @@ export const COMPANY = {
   contactPerson: "R. Shri",
   phone: "022 586 3335",
   phoneHref: "tel:+64225863335",
-  email: "R.R.Painters@yahoo.com",
-  emailHref: "mailto:R.R.Painters@yahoo.com",
+  email: "r.rpainters@yahoo.com",
+  emailHref: "mailto:r.rpainters@yahoo.com",
 };
 
 import projectInterior from "@/assets/project-interior.jpg";
@@ -265,52 +265,53 @@ export interface Project {
 
 export const TESTIMONIALS = [
   {
-    name: "Sarah Mitchell",
-    location: "Auckland",
+    name: "Homeowner",
+    location: "Silverstream, Hutt Valley",
+    project: "Pergola Sand & Paint",
+    text: "Excellent job, prompt service and happy with the outcome.",
     rating: 5,
-    avatar: "https://i.pravatar.cc/160?img=47",
-    review:
-      "RR Painters completely transformed our villa. The attention to detail was incredible — crisp lines, spotless cleanup, and they finished right on schedule. Couldn't recommend them more highly.",
   },
   {
-    name: "James Thompson",
-    location: "Hamilton",
+    name: "Homeowner",
+    location: "Whitby, Porirua",
+    project: "Verandah Paint & Repair",
+    text: "Sri and his team were awesome. Highly recommend. Thanks guys.",
     rating: 5,
-    avatar: "https://i.pravatar.cc/160?img=12",
-    review:
-      "Professional from the first quote to the final walkthrough. Our roof looks brand new and the team was courteous and tidy every single day. Outstanding value.",
   },
   {
-    name: "Priya Sharma",
-    location: "Auckland",
+    name: "Homeowner",
+    location: "Paraparaumu Beach, Kāpiti Coast",
+    project: "Hallway & Stairway Painting",
+    text: "Very satisfied. Sri and his co-worker did a great job, worked non-stop, polite and friendly, and tidied up afterwards.",
     rating: 5,
-    avatar: "https://i.pravatar.cc/160?img=32",
-    review:
-      "We had the whole interior repainted before selling. The finish was flawless and our agent said it added real value. Honest pricing and genuinely lovely people to deal with.",
   },
   {
-    name: "Mark Davidson",
-    location: "Tauranga",
+    name: "Homeowner",
+    location: "Karori, Wellington",
+    project: "Front Door Strip & Sand",
+    text: "Outstanding service. I can't fault the work.",
     rating: 5,
-    avatar: "https://i.pravatar.cc/160?img=59",
-    review:
-      "The exterior repaint has made our 90s home look modern again. They water-blasted, repaired the plaster and painted — one team for everything. Superb workmanship.",
   },
   {
-    name: "Emma Wilson",
-    location: "Auckland",
+    name: "Homeowner",
+    location: "Titahi Bay, Porirua",
+    project: "Internal Re-paint and prep",
+    text: "Sri was quick to respond and was able to quote us on the day requested. Great communication and speed.",
     rating: 5,
-    avatar: "https://i.pravatar.cc/160?img=25",
-    review:
-      "Fast, friendly and fastidious. The wallpaper removal and repaint of our lounge was done in three days with zero mess left behind. Will absolutely use RR Painters again.",
   },
   {
-    name: "David Chen",
-    location: "Wellington",
+    name: "Homeowner",
+    location: "Paraparaumu Beach, Kāpiti Coast",
+    project: "Bathroom Ceiling Painting",
+    text: "Sri is awesome. Very responsive to questions and queries.",
     rating: 5,
-    avatar: "https://i.pravatar.cc/160?img=68",
-    review:
-      "Our office repaint was completed over a single weekend with no disruption to the business. Immaculate finish and great communication throughout the project.",
+  },
+  {
+    name: "Homeowner",
+    location: "Cannons Creek, Porirua",
+    project: "Roof Wash & Gutters",
+    text: "I enjoyed meeting Sri who was professional and friendly. He was always prompt at responding.",
+    rating: 5,
   },
 ];
 
@@ -328,7 +329,7 @@ export const FAQS = [
   {
     question: "What areas do you service?",
     answer:
-      "We service residential and commercial clients across New Zealand, with a focus on the greater Auckland region. Get in touch and we'll confirm availability for your location.",
+      "We service residential and commercial clients across parts of New Zealand, with a focus on the greater Wellington region. Get in touch and we'll confirm availability for your location.",
   },
   {
     question: "What type of paint do you use?",
@@ -344,8 +345,8 @@ export const FAQS = [
 
 export const STATS = [
   { value: 8, suffix: "+", label: "Years of Experience" },
-  { value: 500, suffix: "+", label: "Projects Completed" },
-  { value: 450, suffix: "+", label: "Happy Customers" },
+  { value: 200, suffix: "+", label: "Projects Completed" },
+  { value: 150, suffix: "+", label: "Happy Customers" },
   { value: 100, suffix: "%", label: "Quality Guarantee" },
 ];
 

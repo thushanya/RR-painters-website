@@ -9,55 +9,94 @@ import projectRoof from "@/assets/project-roof.jpg";
 import projectBedroom from "@/assets/project-bedroom.jpg";
 import projectCommercial from "@/assets/project-commercial.jpg";
 import projectWaterblast from "@/assets/project-waterblast.jpg";
+import int1 from "@/assets/int1.jpg";
+import ext1 from "@/assets/ext1.jpg";
+import roofpaint1 from "@/assets/roofpaint1.jpg";
+import wall1 from "@/assets/wall1.jpg";
+
 
 const PROJECTS = [
   {
-    title: "Villa Living Room Refresh",
-    category: "Interior Painting",
-    location: "Remuera, Auckland",
-    beforeAfter: false,
-    image: projectInterior,
-    tall: false,
-  },
-  {
-    title: "Weatherboard Exterior Repaint",
+    title: "Wall Exterior Repaint",
     category: "Exterior Painting",
-    location: "Ponsonby, Auckland",
+    location: "Titahi Bay, Porirua",
     beforeAfter: true,
     image: projectExterior,
     tall: true,
   },
   {
-    title: "Metal Roof Restoration",
+    title: "Living Room Refresh",
+    category: "Interior Painting",
+    location: "Paraparaumu Beach, Kapiti Coast",
+    beforeAfter: false,
+    image: projectInterior,
+    tall: false,
+  },
+  {
+    title: "Roof Painting & Restoration",
     category: "Roof Painting",
-    location: "Hamilton",
+    location: "Stokes Valley, Hutt Valley",
+    beforeAfter: false,
+    image: roofpaint1,
+    tall: true,
+  },
+  
+  {
+    title: "Full External repaint",
+    category: "Exterior Painting",
+    location: "Ngaio, Wellington",
+    beforeAfter: false,
+    image: int1,
+    tall: true, 
+  },
+  {
+    title: "Living Room Feature Wall",
+    category: "Interior Painting",
+    location: "Ōtaki, Kapiti coast",
+    beforeAfter: false,
+    image: projectBedroom,
+    tall: false,
+  },
+   {
+    title: "Deck Water Blasting",
+    category: "Water Blasting",
+    location: "Cannons Creek, Porirua",
+    beforeAfter: true,
+    image: projectWaterblast,
+    tall: false,
+  },
+  {
+    title: "Roof Restoration",
+    category: "Roof Painting",
+    location: "Island Bay, Wellington",
     beforeAfter: true,
     image: projectRoof,
     tall: false,
   },
   {
-    title: "Master Bedroom Feature Wall",
-    category: "Interior Painting",
-    location: "Epsom, Auckland",
+    title: "Exterior repaint of a residential property",
+    category: "Exterior Painting",
+    location: "Waikanae, Kapiti Coast",
     beforeAfter: false,
-    image: projectBedroom,
-    tall: false,
-  },
-  {
-    title: "Commercial Office Fit-Out",
-    category: "Commercial",
-    location: "Auckland CBD",
-    beforeAfter: false,
-    image: projectCommercial,
+    image: ext1,
     tall: true,
   },
   {
-    title: "Deck Water Blasting",
-    category: "Water Blasting",
-    location: "Tauranga",
-    beforeAfter: true,
-    image: projectWaterblast,
-    tall: false,
+    title: "Wallpaper removal",
+    category: "Wallpaper Removal",
+    location: " Johnsonville, Wellington",
+    beforeAfter: false,
+    image: wall1,
+    tall: true,
+  },
+  
+  {
+    title: "Commercial Office Fit-Out",
+    category: "Commercial",
+    location: "Wellington",
+    beforeAfter: false,
+    image: projectCommercial,
+    tall: true,
   },
 ];
 
@@ -115,12 +154,13 @@ export function ProjectsGallery({ limit }: { limit?: number }) {
         </div>
 
         {limit && (
-          <Reveal delay={0.2} className="text-center">
+          <Reveal delay={0.2} className="mt-12 text-center">
             <Link
               to="/projects"
-              className="hover-scale inline-flex items-center gap-2 rounded-full bg-gradient-forest px-7 py-3.5 text-sm font-bold text-primary-foreground shadow-soft"
+              className="inline-flex items-center gap-2.5 rounded-xl bg-emerald-900 px-6 py-3.5 text-sm font-bold text-white shadow-sm transition-all duration-300 hover:bg-black/90 hover:text-white hover:shadow-lift"
             >
-              View All Projects <FaArrowRight aria-hidden />
+              View All Projects <FaArrowRight aria-hidden className="transition-transform duration-300 group-hover:translate-x-1"/>
+              
             </Link>
           </Reveal>
         )}

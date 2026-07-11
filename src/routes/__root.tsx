@@ -106,7 +106,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      // CHANGED: reference changed from '/favicon.ico' to '/favicon.png'
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
     scripts: [
       {
@@ -121,7 +122,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           foundingDate: "2018-06-18",
           areaServed: "New Zealand",
           description:
-            "Residential and commercial painting specialists across New Zealand since 2018.",
+            "Residential and commercial painting specialists across parts of New Zealand since 2018.",
         }),
       },
     ],

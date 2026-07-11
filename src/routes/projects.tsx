@@ -11,12 +11,12 @@ export const Route = createFileRoute("/projects")({
       {
         name: "description",
         content:
-          "Browse completed painting projects by RR Painters — interior, exterior, roof and commercial work across New Zealand.",
+          "Browse completed painting projects by RR Painters — interior, exterior and roof works across parts of New Zealand.",
       },
       { property: "og:title", content: "Featured Projects — RR Painters" },
       {
         property: "og:description",
-        content: "Completed painting projects across residential and commercial New Zealand properties.",
+        content: "Completed painting projects across residential properties in parts of New Zealand.",
       },
     ],
   }),
@@ -29,7 +29,7 @@ function ProjectsPage() {
       <PageHeader
         eyebrow="Featured Projects"
         title="Work That Speaks for Itself"
-        subtitle="A gallery of recent projects — placeholder imagery for now, soon to be replaced with real photos from our completed jobs."
+        subtitle="A gallery of recent projects completed by RR Painters across parts of New Zealand."
       />
       <ProjectsGallery />
       <div className="bg-sage pt-1">
