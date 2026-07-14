@@ -82,9 +82,9 @@ npm run dev
 
 This project is optimized for deployment using:
 
--Vercel
--Namecheap
--👩‍💻 Developer
+- Vercel
+- Namecheap
+- 👩‍💻 Developer
 
 Developed by Thushanya Jeyathasan
 
