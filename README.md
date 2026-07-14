@@ -77,8 +77,6 @@ cd RR-painters-website
 npm install
 npm run dev
 ```
-npm run preview
-
 
 ## 🌍 Deployment
 
@@ -89,7 +87,6 @@ Namecheap
 👩‍💻 Developer
 
 Developed by Thushanya Jeyathasan
-
 
 ## 📄 License
 
