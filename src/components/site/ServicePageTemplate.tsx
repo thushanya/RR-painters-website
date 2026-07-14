@@ -5,13 +5,13 @@ import { CtaBanner } from "@/components/site/CtaBanner";
 import { COMPANY, type Service } from "@/lib/site-data";
 
 // 1. Direct asset imports matching your project files perfectly
-import exteriorHeroImg from "@/assets/exterior-hero.jpg";
-import interiorHeroImg from "@/assets/interior-hero.jpg";
-import plasterHeroImg from "@/assets/plaster-hero.jpg";
-import roofCleanHeroImg from "@/assets/roofcleann-hero.jpg"; // Matches the double 'n' from your asset file
-import roofPaintHeroImg from "@/assets/roofpaint-hero.jpg";
-import wallpaperHeroImg from "@/assets/wall-hero.jpg";
-import waterproofingHeroImg from "@/assets/water-hero.jpg";
+import exteriorHeroImg from "@/assets/exterior-hero.webp";
+import interiorHeroImg from "@/assets/interior-hero.webp";
+import plasterHeroImg from "@/assets/plaster-hero.webp";
+import roofCleanHeroImg from "@/assets/roofcleann-hero.webp"; // Matches the double 'n' from your asset file
+import roofPaintHeroImg from "@/assets/roofpaint-hero.webp";
+import wallpaperHeroImg from "@/assets/wall-hero.webp";
+import waterproofingHeroImg from "@/assets/water-hero.webp";
 
 // 2. Exact slug matching mapping
 const HERO_IMAGE_MAP: Record<string, string> = {

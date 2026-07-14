@@ -22,13 +22,13 @@ export const COMPANY = {
   emailHref: "mailto:r.rpainters@yahoo.com",
 };
 
-import projectInterior from "@/assets/project-interior.jpg";
-import projectExterior from "@/assets/project-exterior.jpg";
-import projectRoof from "@/assets/project-roof.jpg";
-import projectWaterblast from "@/assets/project-waterblast.jpg";
-import serviceRoofCleaning from "@/assets/service-roof-cleaning.jpg";
-import serviceWallpaper from "@/assets/service-wallpaper.jpg";
-import servicePlaster from "@/assets/service-plaster.jpg";
+import projectInterior from "@/assets/project-interior.webp";
+import projectExterior from "@/assets/project-exterior.webp";
+import projectRoof from "@/assets/project-roof.webp";
+import projectWaterblast from "@/assets/project-waterblast.webp";
+import serviceRoofCleaning from "@/assets/service-roof-cleaning.webp";
+import serviceWallpaper from "@/assets/service-wallpaper.webp";
+import servicePlaster from "@/assets/service-plaster.webp";
 
 export interface ServiceDetail {
   tagline: string;

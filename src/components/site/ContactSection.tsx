@@ -1,5 +1,4 @@
 import { useState, type FormEvent } from "react";
-import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaUser, FaCheckCircle } from "react-icons/fa";
 import { Reveal, SectionHeading } from "./Reveal";
 import { COMPANY, SERVICES } from "@/lib/site-data";
 
@@ -48,15 +47,84 @@ export function ContactSection() {
         <div className="mt-14 grid gap-10 lg:grid-cols-5">
           <div className="space-y-5 lg:col-span-2">
             {[
-              { icon: FaUser, label: "Contact Person", value: COMPANY.contactPerson, href: undefined },
-              { icon: FaPhoneAlt, label: "Phone", value: COMPANY.phone, href: COMPANY.phoneHref },
-              { icon: FaEnvelope, label: "Email", value: COMPANY.email, href: COMPANY.emailHref },
-              { icon: FaMapMarkerAlt, label: "Service Area", value: "Parts of New Zealand (Greater Wellington Region)", href: undefined },
-            ].map((item, i) => (
+  {
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+        <circle cx="12" cy="7" r="4" />
+      </svg>
+    ),
+    label: "Contact Person",
+    value: COMPANY.contactPerson,
+    href: undefined,
+  },
+  {
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+      </svg>
+    ),
+    label: "Phone",
+    value: COMPANY.phone,
+    href: COMPANY.phoneHref,
+  },
+  {
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+        <polyline points="22,6 12,13 2,6" />
+      </svg>
+    ),
+    label: "Email",
+    value: COMPANY.email,
+    href: COMPANY.emailHref,
+  },
+  {
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z" />
+        <circle cx="12" cy="10" r="3" />
+      </svg>
+    ),
+    label: "Service Area",
+    value: "Parts of New Zealand (Greater Wellington Region)",
+    href: undefined,
+  },
+].map((item, i) => (
               <Reveal key={item.label} delay={i * 0.08}>
                 <div className="flex items-center gap-4 rounded-3xl border border-border bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
                   <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-forest text-primary-foreground">
-                    <item.icon aria-hidden />
+                    <span className="h-6 w-6">
+  {item.icon}
+</span>
                   </span>
                   <div className="min-w-0">
                     <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
@@ -83,13 +151,19 @@ export function ContactSection() {
                   href={COMPANY.phoneHref}
                   className="hover-scale inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-gradient-forest px-6 py-3.5 text-sm font-bold text-primary-foreground shadow-soft"
                 >
-                  <FaPhoneAlt aria-hidden /> Call Now
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  Call Now
                 </a>
                 <a
                   href={COMPANY.emailHref}
                   className="hover-scale inline-flex flex-1 items-center justify-center gap-2 rounded-full border-2 border-primary px-6 py-3.5 text-sm font-bold text-primary"
                 >
-                  <FaEnvelope aria-hidden /> Email Us
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  Email Us
                 </a>
               </div>
             </Reveal>
@@ -186,7 +260,10 @@ export function ContactSection() {
 
               {submitted && (
                 <p className="mt-4 flex items-center justify-center gap-2 text-sm font-semibold text-primary">
-                  <FaCheckCircle aria-hidden /> Thank you! Your request has been sent successfully.
+                  <svg className="h-5 w-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Thank you! Your request has been sent successfully.
                 </p>
               )}
             </form>

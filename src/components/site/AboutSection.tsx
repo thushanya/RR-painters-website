@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 import { Reveal } from "./Reveal";
-import aboutImage from "@/assets/painter.jpg";
+import aboutImage from "@/assets/painter.webp";
 
 const POINTS = [
   "High-quality finishes on every surface",
@@ -15,14 +14,12 @@ export function AboutSection({ full = false }: { full?: boolean }) {
     <section className="bg-sage py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid items-center gap-14 lg:grid-cols-2">
-          <Reveal>
             <div className="relative">
               <img
                 src={aboutImage}
                 alt="RR Painters craftsman applying a premium finish to an interior wall"
                 width={1024}
                 height={1280}
-                loading="lazy"
                 className="w-full rounded-4xl object-cover shadow-lift"
               />
               <div className="glass-light absolute -bottom-6 left-6 rounded-3xl px-6 py-5 shadow-soft">
@@ -32,7 +29,6 @@ export function AboutSection({ full = false }: { full?: boolean }) {
                 </p>
               </div>
             </div>
-          </Reveal>
 
           <div>
             <Reveal>
@@ -54,7 +50,16 @@ export function AboutSection({ full = false }: { full?: boolean }) {
               <ul className="mt-7 grid gap-3 sm:grid-cols-2">
                 {POINTS.map((point) => (
                   <li key={point} className="flex items-center gap-2.5 text-sm font-semibold">
-                    <FaCheckCircle aria-hidden className="shrink-0 text-accent" />
+                    <svg 
+                      className="h-5 w-5 shrink-0 text-accent" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      viewBox="0 0 24 24" 
+                      aria-hidden="true"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                     {point}
                   </li>
                 ))}
@@ -67,7 +72,16 @@ export function AboutSection({ full = false }: { full?: boolean }) {
                   to="/about"
                   className="story-link relative mt-6 inline-flex items-center gap-2 text-sm font-bold text-gold"
                 > 
-                  More About Us <FaArrowRight aria-hidden className="transition-transform duration-300 group-hover:translate-x-1" />
+                  More About Us <svg 
+                    className="h-4 w-4" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2" 
+                    viewBox="0 0 24 24" 
+                    aria-hidden="true"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
                 </Link>
               </Reveal>
             )}

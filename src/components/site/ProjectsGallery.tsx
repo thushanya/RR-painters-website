@@ -1,18 +1,17 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
-import { FaArrowRight, FaExpand, FaMapMarkerAlt, FaTimes } from "react-icons/fa";
 import { Reveal, SectionHeading } from "./Reveal";
-import projectInterior from "@/assets/project-interior.jpg";
-import projectExterior from "@/assets/project-exterior.jpg";
-import projectRoof from "@/assets/project-roof.jpg";
-import projectBedroom from "@/assets/project-bedroom.jpg";
-import projectCommercial from "@/assets/project-commercial.jpg";
-import projectWaterblast from "@/assets/project-waterblast.jpg";
-import int1 from "@/assets/int1.jpg";
-import ext1 from "@/assets/ext1.jpg";
-import roofpaint1 from "@/assets/roofpaint1.jpg";
-import wall1 from "@/assets/wall1.jpg";
+import projectInterior from "@/assets/project-interior.webp";
+import projectExterior from "@/assets/project-exterior.webp";
+import projectRoof from "@/assets/project-roof.webp";
+import projectBedroom from "@/assets/project-bedroom.webp";
+import projectCommercial from "@/assets/project-commercial.webp";
+import projectWaterblast from "@/assets/project-waterblast.webp";
+import int1 from "@/assets/int1.webp";
+import ext1 from "@/assets/ext1.webp";
+import roofpaint1 from "@/assets/roofpaint1.webp";
+import wall1 from "@/assets/wall1.webp";
 
 
 const PROJECTS = [
@@ -137,7 +136,16 @@ export function ProjectsGallery({ limit }: { limit?: number }) {
                   </span>
                 )}
                 <span className="glass absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full text-xs text-primary-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <FaExpand aria-hidden />
+                  <svg
+                    className="h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
                 </span>
                 <div className="absolute inset-x-0 bottom-0 p-6">
                   <p className="text-xs font-bold uppercase tracking-[0.16em] text-emerald">
@@ -145,7 +153,17 @@ export function ProjectsGallery({ limit }: { limit?: number }) {
                   </p>
                   <h3 className="mt-1 text-lg font-semibold text-primary-foreground">{project.title}</h3>
                   <p className="mt-1 flex items-center gap-1.5 text-xs text-primary-foreground/70">
-                    <FaMapMarkerAlt aria-hidden /> {project.location}
+                    <svg
+                      className="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.75 20.543A1 1 0 0113.75 20.543L9.843 16.657a1 1 0 010-1.414l8-8a1 1 0 011.414 0l8 8a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0z" />
+                    </svg>
+                    {project.location}
                   </p>
                 </div>
               </button>
@@ -159,8 +177,16 @@ export function ProjectsGallery({ limit }: { limit?: number }) {
               to="/projects"
               className="inline-flex items-center gap-2.5 rounded-xl bg-emerald-900 px-6 py-3.5 text-sm font-bold text-white shadow-sm transition-all duration-300 hover:bg-black/90 hover:text-white hover:shadow-lift"
             >
-              View All Projects <FaArrowRight aria-hidden className="transition-transform duration-300 group-hover:translate-x-1"/>
-              
+              View All Projects <svg 
+                className="h-4 w-4" 
+                fill="none"
+                stroke="currentColor" 
+                strokeWidth="2" 
+                viewBox="0 0 24 24" 
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </Link>
           </Reveal>
         )}
@@ -184,7 +210,16 @@ export function ProjectsGallery({ limit }: { limit?: number }) {
               aria-label="Close preview"
               className="glass absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full text-primary-foreground"
             >
-              <FaTimes aria-hidden />
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
             <motion.figure
               initial={{ scale: 0.92, opacity: 0 }}

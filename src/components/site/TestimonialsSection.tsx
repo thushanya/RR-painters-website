@@ -1,4 +1,3 @@
-import { FaStar, FaMapMarkerAlt } from "react-icons/fa";
 import { Reveal, SectionHeading } from "./Reveal";
 import { TESTIMONIALS } from "@/lib/site-data";
 
@@ -59,7 +58,17 @@ export function TestimonialsSection({ limit }: { limit?: number }) {
                             {profileTitle}
                           </h4>
                           <p className="mt-1 flex items-center gap-1 text-[11px] font-medium text-neutral-400">
-                            <FaMapMarkerAlt className="text-[10px] text-accent" />
+                           <svg
+                              className="h-3 w-3 text-neutral-400"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              viewBox="0 0 24 24"
+                              aria-hidden="true"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
                             {cityName},{regionName}
                           </p>
                         </div>
@@ -67,7 +76,15 @@ export function TestimonialsSection({ limit }: { limit?: number }) {
 
                       <div className="flex gap-0.5 text-amber-400 pt-1">
                         {[...Array(review.rating)].map((_, idx) => (
-                          <FaStar key={idx} className="text-[10px]" />
+                          <svg
+                            key={idx}
+                            className="h-4 w-4 text-amber-400"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.15L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                          </svg>
                         ))}
                       </div>
                     </div>

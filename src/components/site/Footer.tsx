@@ -1,7 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { COMPANY, NAV_LINKS, SERVICES } from "@/lib/site-data";
-import logoImg from "@/assets/favicon.png"; 
 
 export function Footer() {
   return (
@@ -12,7 +10,7 @@ export function Footer() {
             <div className="flex items-center gap-2.5">
               <span className="flex h-10 w-10 items-center justify-center rounded-full overflow-hidden text-lg font-bold glass text-primary-foreground">
                 <img 
-                  src={logoImg} 
+                  src="/favicon.webp"
                   alt="RR Painters Logo" 
                   className="h-full w-full object-cover" 
                 />
@@ -73,19 +71,29 @@ export function Footer() {
             </h3>
             <ul className="mt-5 space-y-4 text-sm text-primary-foreground/80">
               <li className="flex items-start gap-3">
-                <FaPhoneAlt aria-hidden className="mt-1 shrink-0 text-emerald" />
+                {/* Inline Phone SVG */}
+                <svg className="mt-1 h-4 w-4 shrink-0 text-emerald" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21.384 17.791l-3.75-3.214a1.25 1.25 0 00-1.616.033l-1.571 1.305c-2.938-1.545-5.327-3.935-6.872-6.872l1.305-1.57a1.25 1.25 0 00.033-1.616L5.698 1.107A1.25 1.25 0 004.05 1.02L1.082 3.22A2.5 2.5 0 000 5.23c0 10.364 8.407 18.77 18.77 18.77a2.5 2.5 0 002.01-1.082l2.2-2.969a1.25 1.25 0 00-.087-1.644l-.509-.514z"/>
+                </svg>
                 <a href={COMPANY.phoneHref} className="hover:text-primary-foreground">
                   {COMPANY.phone}
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <FaEnvelope aria-hidden className="mt-1 shrink-0 text-emerald" />
+                {/* Inline Envelope SVG */}
+                <svg className="mt-1 h-4 w-4 shrink-0 text-emerald" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5A2.25 2.25 0 012.25 17.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5H4.5a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
                 <a href={COMPANY.emailHref} className="break-all hover:text-primary-foreground">
                   {COMPANY.email}
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <FaMapMarkerAlt aria-hidden className="mt-1 shrink-0 text-emerald" />
+                {/* Inline Map Marker SVG */}
+                <svg className="mt-1 h-4 w-4 shrink-0 text-emerald" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25s-7.5-4.108-7.5-11.25a7.5 7.5 0 1115 0z" />
+                </svg>
                 <span>Serving Hutt Valley, Kapiti Coast, Porirua & Wellington in New Zealand</span>
               </li>
             </ul>

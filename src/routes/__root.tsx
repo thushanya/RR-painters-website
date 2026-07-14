@@ -79,21 +79,41 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "RR Painters | Professional Painting Services NZ" },
+      {
+        title: "RR Painters NZ | Professional House Painters in New Zealand",
+      },
       {
         name: "description",
         content:
-          "RR Painters — trusted residential & commercial painting specialists across New Zealand since 2018. Interior, exterior, roof painting & more. Free quotes.",
+          "RR Painters provides professional interior painting, exterior painting, roof painting, wallpaper removal, plaster repairs and water blasting services across New Zealand. Get a free quote today.",
       },
       { name: "author", content: "R. R Painting Services Limited" },
-      { property: "og:title", content: "RR Painters | Professional Painting Services NZ" },
       {
-        property: "og:description",
-        content:
-          "Trusted residential & commercial painting specialists across New Zealand since 2018. Free quotes.",
-      },
-      { property: "og:type", content: "website" },
+  property: "og:title",
+  content: "RR Painters NZ | Professional Painting Services",
+},
+{
+  property: "og:description",
+  content:
+    "Trusted residential and commercial painting specialists across New Zealand. Interior, exterior and roof painting services.",
+},
+{
+  property: "og:type",
+  content: "website",
+},
+{
+  property: "og:url",
+  content: "https://rrpaintersnz.com",
+},
+{
+  property: "og:image",
+  content: "https://rrpaintersnz.com/og-image.webp",
+},
       { name: "twitter:card", content: "summary_large_image" },
+      {
+  name: "twitter:image",
+  content: "https://rrpaintersnz.com/og-image.webp",
+},
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -106,8 +126,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      // CHANGED: reference changed from '/favicon.ico' to '/favicon.png'
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
+      // CHANGED: reference changed from '/favicon.ico' to '/favicon.webp'
+      { rel: "icon", href: "/favicon.webp", type: "image/webp" },
     ],
     scripts: [
       {

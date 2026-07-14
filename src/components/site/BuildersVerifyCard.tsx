@@ -1,6 +1,5 @@
-import { FaExternalLinkAlt } from "react-icons/fa";
 import { Reveal } from "./Reveal";
-import qrImg from "@/assets/QR.jpg"; // Absolute path alias to your project image asset
+import qrImg from "@/assets/QR.webp"; // Absolute path alias to your project image asset
 
 function BuilderscrackLogo({ className }: { className?: string }) {
   return (
@@ -46,12 +45,21 @@ export function BuildersVerifyCard({ profileUrl }: { profileUrl: string }) {
                     className="inline-flex items-center gap-2.5 rounded-xl bg-emerald-900 px-6 py-3.5 text-sm font-bold text-white shadow-sm transition-all duration-300 hover:bg-black/90 hover:text-white hover:shadow-lift"
                   >
                     View Our Public Profile 
-                    <FaExternalLinkAlt className="text-xs transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <svg 
+                      className="h-4 w-4 inline-block ml-1" 
+                      fill="none"
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      viewBox="0 0 24 24" 
+                      aria-hidden="true"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
                   </a>
                 </div>
               </div>
 
-              {/* Right Column: Premium Stylized Image Frame holding QR.jpg */}
+              {/* Right Column: Premium Stylized Image Frame holding QR.webp */}
               <div className="flex flex-col items-center justify-center shrink-0 lg:w-72 relative z-10">
                 <div className="relative rounded-3xl border border-emerald/10 bg-white p-6 shadow-soft transition-all duration-300 hover:border-emerald/30">
                   <div className="relative overflow-hidden h-40 w-40 rounded-2xl bg-white p-1.5 shadow-sm border border-neutral-200/40 group">

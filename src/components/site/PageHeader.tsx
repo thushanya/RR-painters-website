@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 
 export function PageHeader({ eyebrow, title, subtitle }: { eyebrow: string; title: string; subtitle: string }) {
   return (
@@ -12,10 +11,7 @@ export function PageHeader({ eyebrow, title, subtitle }: { eyebrow: string; titl
         className="pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-gold/15 blur-3xl"
       />
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        <div
           className="max-w-2xl"
         >
           <span className="glass inline-block rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em]">
@@ -23,7 +19,7 @@ export function PageHeader({ eyebrow, title, subtitle }: { eyebrow: string; titl
           </span>
           <h1 className="mt-5 text-4xl font-semibold leading-tight md:text-5xl">{title}</h1>
           <p className="mt-4 text-base leading-relaxed text-primary-foreground/75 md:text-lg">{subtitle}</p>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

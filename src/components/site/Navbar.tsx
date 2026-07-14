@@ -1,10 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { FaBars, FaPhoneAlt, FaTimes } from "react-icons/fa";
 import { NAV_LINKS, COMPANY } from "@/lib/site-data";
-// 1. Import your logo image here
-import logoImg from "@/assets/favicon.png"; 
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -32,15 +28,13 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
         <Link to="/" className="flex items-center gap-2.5" aria-label="RR Painters home">
-          {/* 2. Changed rounded-xl to rounded-full and added overflow-hidden */}
           <span
             className={`flex h-10 w-10 items-center justify-center rounded-full overflow-hidden text-lg font-bold ${
               solid ? "bg-gradient-forest text-primary-foreground" : "glass text-primary-foreground"
             }`}
           >
-            {/* 3. Replaced the "RR" text with the img element */}
             <img 
-              src={logoImg} 
+              src="/favicon.webp"
               alt="RR Painters Logo" 
               className="h-full w-full object-cover" 
             />
@@ -63,6 +57,7 @@ export function Navbar() {
           </span>
         </Link>
 
+        {/* Desktop Navigation */}
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
           {NAV_LINKS.map((link) => (
             <Link
@@ -92,7 +87,10 @@ export function Navbar() {
               solid ? "text-primary" : "text-primary-foreground"
             }`}
           >
-            <FaPhoneAlt aria-hidden className="text-xs" />
+            {/* Inline Phone SVG */}
+            <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21.384 17.791l-3.75-3.214a1.25 1.25 0 00-1.616.033l-1.571 1.305c-2.938-1.545-5.327-3.935-6.872-6.872l1.305-1.57a1.25 1.25 0 00.033-1.616L5.698 1.107A1.25 1.25 0 004.05 1.02L1.082 3.22A2.5 2.5 0 000 5.23c0 10.364 8.407 18.77 18.77 18.77a2.5 2.5 0 002.01-1.082l2.2-2.969a1.25 1.25 0 00-.087-1.644l-.509-.514z"/>
+            </svg>
             {COMPANY.phone}
           </a>
           <Link
@@ -103,6 +101,7 @@ export function Navbar() {
           </Link>
         </div>
 
+        {/* Hamburger Menu Toggle Button */}
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
@@ -112,44 +111,49 @@ export function Navbar() {
             solid ? "bg-secondary text-primary" : "glass text-primary-foreground"
           }`}
         >
-          {open ? <FaTimes aria-hidden /> : <FaBars aria-hidden />}
+          {open ? (
+            /* Inline Close Icon */
+            <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            /* Inline Hamburger Icon */
+            <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
         </button>
       </div>
 
-      <AnimatePresence>
-        {open && (
-          <motion.nav
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-            className="overflow-hidden border-t border-border lg:hidden"
-            aria-label="Mobile navigation"
+      {/* Mobile Navigation Panel - Accelerated CSS Animation */}
+      <nav
+        className={`grid transition-all duration-300 ease-out lg:hidden border-t border-border overflow-hidden ${
+          open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+        aria-label="Mobile navigation"
+      >
+        <div className="min-h-0 space-y-1 px-5 py-4">
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              activeOptions={{ exact: link.to === "/" }}
+              className="block rounded-xl px-4 py-3 text-sm font-semibold text-foreground/80 hover:bg-secondary"
+              activeProps={{
+                className: "block rounded-xl bg-secondary px-4 py-3 text-sm font-semibold text-primary",
+              }}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link
+            to="/contact"
+            className="mt-2 block rounded-xl bg-gradient-gold px-4 py-3 text-center text-sm font-bold text-gold-foreground shadow-gold"
           >
-            <div className="space-y-1 px-5 py-4">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  activeOptions={{ exact: link.to === "/" }}
-                  className="block rounded-xl px-4 py-3 text-sm font-semibold text-foreground/80 hover:bg-secondary"
-                  activeProps={{
-                    className: "block rounded-xl bg-secondary px-4 py-3 text-sm font-semibold text-primary",
-                  }}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Link
-                to="/contact"
-                className="mt-2 block rounded-xl bg-gradient-gold px-4 py-3 text-center text-sm font-bold text-gold-foreground shadow-gold"
-              >
-                Get a Free Quote
-              </Link>
-            </div>
-          </motion.nav>
-        )}
-      </AnimatePresence>
+            Get a Free Quote
+          </Link>
+        </div>
+      </nav>
     </header>
   );
 }

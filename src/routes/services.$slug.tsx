@@ -1,5 +1,4 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { FaArrowRight } from "react-icons/fa";
 import { ServicePageTemplate } from "@/components/site/ServicePageTemplate";
 import { SERVICES, type Service } from "@/lib/site-data";
 
@@ -44,7 +43,16 @@ export const Route = createFileRoute("/services/$slug")({
         to="/services"
         className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-forest px-6 py-3 text-sm font-bold text-primary-foreground"
       >
-        View All Services <FaArrowRight aria-hidden />
+        View All Services <svg 
+  className="h-4 w-4 inline-block ml-1" 
+  fill="none" 
+  stroke="currentColor" 
+  strokeWidth="2" 
+  viewBox="0 0 24 24" 
+  aria-hidden="true"
+>
+  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+</svg>
       </Link>
     </div>
   ),

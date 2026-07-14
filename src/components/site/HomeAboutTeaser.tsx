@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { FaArrowRight } from "react-icons/fa";
 import { Reveal } from "./Reveal";
-import aboutImage from "@/assets/about-painter.jpg";
+import aboutImage from "@/assets/about-painter.webp";
 
 export function HomeAboutTeaser() {
   return (
@@ -47,7 +46,16 @@ export function HomeAboutTeaser() {
                 to="/about"
                 className="story-link relative mt-6 inline-flex items-center gap-2 text-sm font-bold text-primary"
               >
-                More About Us{" "} <FaArrowRight aria-hidden className="transition-transform duration-300 group-hover:translate-x-1"/>
+                More About Us{" "} <svg 
+                  className="h-4 w-4" 
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
               </Link>
             </Reveal>
           </div>

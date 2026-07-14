@@ -32,7 +32,7 @@ detail: {
 - Replace the "Learn More → /contact" link with `to="/services/$slug"` using `params={{ slug: service.slug }}`
 - Wrap the whole card in the `Link` (or make the card a `Link`) so the entire tile is clickable, keeping the current hover-lift visual
 
-**Images** — generate 4 new service images we don't already have (interior, exterior are covered by existing project images we can reuse; generate for: `roof-cleaning`, `wallpaper-removal`, `plaster-repairs`, and one clean `service-interior-hero`). Reuse existing `project-*.jpg` assets where they fit (e.g. `project-roof.jpg` for roof-painting, `project-waterblast.jpg` for water-blasting, `project-exterior.jpg` for exterior-painting, `project-interior.jpg` for interior-painting). Net new generations: 3 images.
+**Images** — generate 4 new service images we don't already have (interior, exterior are covered by existing project images we can reuse; generate for: `roof-cleaning`, `wallpaper-removal`, `plaster-repairs`, and one clean `service-interior-hero`). Reuse existing `project-*.webp` assets where they fit (e.g. `project-roof.webp` for roof-painting, `project-waterblast.webp` for water-blasting, `project-exterior.webp` for exterior-painting, `project-interior.webp` for interior-painting). Net new generations: 3 images.
 
 ### 2. Contact page — remove Google Map placeholder
 

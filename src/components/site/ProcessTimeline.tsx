@@ -1,30 +1,95 @@
 import { motion } from "framer-motion";
-import { FaComments, FaFileInvoiceDollar, FaTools, FaPaintBrush, FaClipboardCheck } from "react-icons/fa";
 import { Reveal, SectionHeading } from "./Reveal";
 
 const STEPS = [
   {
-    icon: FaComments,
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
+        <path d="M8 9h8" />
+        <path d="M8 13h5" />
+      </svg>
+    ),
     title: "Consultation",
     text: "We listen to your vision, assess your property and recommend the right approach.",
   },
   {
-    icon: FaFileInvoiceDollar,
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="3" y="4" width="18" height="16" rx="2" />
+        <path d="M7 8h10" />
+        <path d="M7 12h6" />
+        <path d="M7 16h4" />
+      </svg>
+    ),
     title: "Free Quote",
     text: "A detailed, transparent written quote — no hidden costs, no obligation.",
   },
   {
-    icon: FaTools,
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3-3a1 1 0 0 0 0-1.4l-1.6-1.6a1 1 0 0 0-1.4 0z" />
+        <path d="M5 19l9.5-9.5" />
+        <path d="M3 21l3-1 1-3" />
+      </svg>
+    ),
     title: "Surface Preparation",
     text: "Thorough cleaning, sanding, repairs and priming — the foundation of a lasting finish.",
   },
   {
-    icon: FaPaintBrush,
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M3 21h18" />
+        <path d="M6 21V7l6-4 6 4v14" />
+        <path d="M9 21v-6h6v6" />
+        <path d="M12 3v4" />
+      </svg>
+    ),
     title: "Professional Painting",
     text: "Premium paints applied with precision by skilled, careful tradespeople.",
   },
   {
-    icon: FaClipboardCheck,
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M9 11l3 3L22 4" />
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+      </svg>
+    ),
     title: "Final Inspection",
     text: "A full walkthrough together, spotless cleanup, and your complete satisfaction confirmed.",
   },
@@ -65,7 +130,9 @@ export function ProcessTimeline() {
                         left ? "md:left-auto md:-right-6" : "md:-left-6"
                       }`}
                     >
-                      <step.icon aria-hidden />
+                      <span className="h-6 w-6">
+  {step.icon}
+</span>
                     </span>
                     <div className="rounded-3xl border border-border bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
                       <span className="text-xs font-bold uppercase tracking-[0.2em] text-gold">
