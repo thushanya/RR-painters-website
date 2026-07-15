@@ -1,4 +1,4 @@
-# RR Painters 
+# RR Painters Web
 
 A premium, modern, and responsive showcase website developed for **RR Painters (R. R Painting Services Limited)**, a professional painting company based in New Zealand.
 
