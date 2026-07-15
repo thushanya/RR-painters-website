@@ -129,23 +129,41 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       // CHANGED: reference changed from '/favicon.ico' to '/favicon.webp'
       { rel: "icon", href: "/favicon.webp", type: "image/webp" },
     ],
+    
     scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "HomeAndConstructionBusiness",
-          name: "RR Painters",
-          legalName: "R. R Painting Services Limited",
-          telephone: "+64 22 586 3335",
-          email: "R.R.Painters@yahoo.com",
-          foundingDate: "2018-06-18",
-          areaServed: "New Zealand",
-          description:
-            "Residential and commercial painting specialists across parts of New Zealand since 2018.",
-        }),
-      },
-    ],
+  // Google Analytics
+  {
+    src: "https://www.googletagmanager.com/gtag/js?id=G-R5CL81PC8V",
+    async: true,
+  },
+  {
+    type: "text/javascript",
+    children: `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-R5CL81PC8V');
+    `,
+  },
+
+  // Schema.org JSON-LD
+  {
+    type: "application/ld+json",
+    children: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      name: "RR Painters",
+      legalName: "R. R Painting Services Limited",
+      telephone: "+64 22 586 3335",
+      email: "R.R.Painters@yahoo.com",
+      foundingDate: "2018-06-18",
+      areaServed: "New Zealand",
+      description:
+        "Residential and commercial painting specialists across parts of New Zealand since 2018.",
+    }),
+  },
+],
   }),
   shellComponent: RootShell,
   component: RootComponent,
