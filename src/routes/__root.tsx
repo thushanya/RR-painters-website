@@ -126,8 +126,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      // CHANGED: reference changed from '/favicon.ico' to '/favicon.webp'
-      { rel: "icon", href: "/favicon.webp", type: "image/webp" },
+      // CHANGED: reference changed from '/favicon.ico' to '/favicon.png'
+        { rel: "icon", type: "image/png", href: "/favicon.png" },
+        { rel: "shortcut icon", href: "/favicon.png" },
+        { rel: "apple-touch-icon", href: "/favicon.png" },
     ],
     
     scripts: [
