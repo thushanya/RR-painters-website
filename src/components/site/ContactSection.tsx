@@ -14,7 +14,7 @@ export function ContactSection() {
     const data = new FormData(form);
 
     try {
-      const response = await fetch("https://formspree.io/f/mdarqrzw", {
+      const response = await fetch("https://formspree.io/f/mpqvrpkp", {
         method: "POST",
         body: data,
         headers: {
