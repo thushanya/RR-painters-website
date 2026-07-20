@@ -8,13 +8,15 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-2.5">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full overflow-hidden text-lg font-bold glass text-primary-foreground">
-                <img 
-                  src="/favicon.webp"
-                  alt="RR Painters Logo" 
-                  className="h-full w-full object-cover" 
-                />
-              </span>
+              <span
+  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full overflow-hidden glass text-primary-foreground"
+>
+  <img
+    src="/favicon.png"
+    alt="RR Painters Logo"
+    className="h-full w-full object-contain"
+  />
+</span>
               <span>
                 <span className="font-display block text-xl font-semibold">RR Painters</span>
                 <span className="block text-[10px] font-semibold uppercase tracking-[0.22em] text-primary-foreground/60">

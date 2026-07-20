@@ -29,16 +29,16 @@ export function Navbar() {
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
         <Link to="/" className="flex items-center gap-2.5" aria-label="RR Painters home">
           <span
-            className={`flex h-10 w-10 items-center justify-center rounded-full overflow-hidden text-lg font-bold ${
-              solid ? "bg-gradient-forest text-primary-foreground" : "glass text-primary-foreground"
-            }`}
-          >
-            <img 
-              src="/favicon.webp"
-              alt="RR Painters Logo" 
-              className="h-full w-full object-cover" 
-            />
-          </span>
+  className={`flex h-10 w-10 items-center justify-center rounded-full overflow-hidden text-lg font-bold ${
+    solid ? "bg-gradient-forest text-primary-foreground" : "glass text-primary-foreground"
+  }`}
+>
+  <img 
+    src="/favicon.png"
+    alt="RR Painters Logo" 
+    className="h-full w-full object-cover" 
+  />
+</span>
           <span className="leading-tight">
             <span
               className={`font-display block text-lg font-semibold ${
