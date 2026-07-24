@@ -13,10 +13,6 @@ https://rrpaintersnz.com/
 **Company Name:** R. R Painting Services Limited  
 **Brand Name:** RR Painters  
 
-**Established:** 2018  
-**Company Number:** 6889413  
-**NZBN:** 9429046840202  
-
 RR Painters provides professional painting and property maintenance services across New Zealand.
 
 ## ✨ Features
@@ -51,19 +47,7 @@ RR Painters provides professional painting and property maintenance services acr
 - Framer Motion
 - React Router
 - React Icons
-
-## 📂 Project Structure
-src/
-├── assets/ # Images and media files
-├── components/ # Reusable React components
-├── pages/ # Website pages
-├── routes/ # Application routes
-├── App.tsx
-└── main.tsx
-
-public/
-└── Static assets
-
+  
 
 ## 🚀 Installation & Setup
 
