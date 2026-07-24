@@ -6,7 +6,7 @@ The website is designed to showcase completed painting projects, highlight servi
 
 ## 🌐 Live Website
 
-Coming soon
+https://rrpaintersnz.com/
 
 ## 🏢 About the Company
 
